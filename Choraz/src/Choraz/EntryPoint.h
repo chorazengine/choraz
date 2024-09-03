@@ -5,6 +5,7 @@
 extern Choraz::Application* Choraz::CreateApplication();
 
 int main(int argc, char** argv) {
+	printf("Hazel Engine\n");
 	auto app = Choraz::CreateApplication();
 	app->Run();
 	delete app;
