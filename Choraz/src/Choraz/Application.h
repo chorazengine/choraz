@@ -2,9 +2,11 @@
 
 #include "Core.h"
 
-namespace Choraz {
+namespace Choraz
+{
 
-	class CHORAZ_API Application {
+	class CHORAZ_API Application
+	{
 	public:
 		Application();
 		virtual ~Application();

@@ -1,15 +1,18 @@
 #include "Application.h"
 
-namespace Choraz {
+namespace Choraz
+{
 
-
-	Application::Application() {
+	Application::Application()
+	{
 	}
 
-	Application::~Application() {
+	Application::~Application()
+	{
 	}
 
-	void Application::Run() {
+	void Application::Run()
+	{
 		while (true);
 	}
 
