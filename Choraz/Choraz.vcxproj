@@ -12,12 +12,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Choraz.h" />
-    <ClInclude Include="src\Choraz\Application.h" />
-    <ClInclude Include="src\Choraz\Core.h" />
-    <ClInclude Include="src\Choraz\EntryPoint.h" />
+    <ClInclude Include="src\Choraz\application.h" />
+    <ClInclude Include="src\Choraz\core\logger.h" />
+    <ClInclude Include="src\Choraz\defines.h" />
+    <ClInclude Include="src\Choraz\entry_point.h" />
+    <ClInclude Include="src\Platform\platform.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Choraz\Application.cpp" />
+    <ClCompile Include="src\Choraz\application.cpp" />
+    <ClCompile Include="src\Choraz\core\logger.cpp" />
+    <ClCompile Include="src\Platform\linux_wayland\platform.cpp" />
+    <ClCompile Include="src\Platform\linux_x11\platform.cpp" />
+    <ClCompile Include="src\Platform\windows\platform.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -55,16 +61,18 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)\bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)\bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+    <IncludePath>$(ProjectDir)src;$(ProjectDir)src/Choraz;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)\bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)\bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+    <IncludePath>$(ProjectDir)src;$(ProjectDir)src/Choraz;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CH_PLATFORM_WINDOWS;CH_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;CH_PLATFORM_WINDOWS;CH_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>

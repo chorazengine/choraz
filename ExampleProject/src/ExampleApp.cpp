@@ -12,10 +12,6 @@ public:
 	{
 
 	}
-
-	void Run()
-	{
-	}
 };
 
 Choraz::Application* Choraz::CreateApplication()

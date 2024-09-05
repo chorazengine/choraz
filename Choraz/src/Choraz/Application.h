@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core.h"
+#include "defines.h"
 
 namespace Choraz
 {

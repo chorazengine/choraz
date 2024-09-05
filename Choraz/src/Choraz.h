@@ -2,10 +2,10 @@
 
 // Only for use by Choraz applications
 
-#include <stdio.h>
-#include "Choraz/Application.h"
+#include "Choraz/application.h"
+#include "Choraz/core/logger.h"
 
 // --Entry Point---------------------
 // ----------------------------------
-#include "Choraz/EntryPoint.h"
+#include "Choraz/entry_point.h"
 // ----------------------------------
