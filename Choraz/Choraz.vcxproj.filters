@@ -41,10 +41,7 @@
     <ClCompile Include="src\Platform\windows\platform.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\linux_x11\platform.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Platform\linux_wayland\platform.cpp">
+    <ClCompile Include="src\Platform\linux\platform.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="src\Choraz\core\logger.cpp">

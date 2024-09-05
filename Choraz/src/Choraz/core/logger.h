@@ -14,8 +14,8 @@ typedef enum LogLevel
 
 namespace Logger
 {
-	static const b8 is_initialized = FALSE;
-	b8 initialize();
+	static const bool is_initialized = false;
+	bool initialize();
 
 	CHORAZ_API void Log(LogLevel level, const char* message, ...);
 };

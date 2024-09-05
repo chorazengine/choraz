@@ -21,8 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\Choraz\application.cpp" />
     <ClCompile Include="src\Choraz\core\logger.cpp" />
-    <ClCompile Include="src\Platform\linux_wayland\platform.cpp" />
-    <ClCompile Include="src\Platform\linux_x11\platform.cpp" />
+    <ClCompile Include="src\Platform\linux\platform.cpp" />
     <ClCompile Include="src\Platform\windows\platform.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -61,7 +60,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)\bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)\bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
-    <IncludePath>$(ProjectDir)src;$(ProjectDir)src/Choraz;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)src\Choraz;$(ProjectDir)src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)\bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>

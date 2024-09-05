@@ -3,22 +3,23 @@
 #include "Platform/platform.h"
 
 #include <stdio.h>
+#include <stdint.h>
 #include <string.h>
 #include <stdarg.h>
 
 namespace Logger
 {
-	b8 initialize()
+	bool initialize()
 	{
-		return TRUE;
+		return true;
 	}
 
 	void Log(LogLevel level, const char* message, ...)
 	{
 		const char* level_strings[6] = { "[FATAL]: ", "[ERROR]: ", "[WARNING]: ", "[INFO]: ", "[DEBUG]: ", "[TRACE]: " };
-		b8 is_error = level <= LevelError;
+		bool is_error = level <= LevelError;
 
-		const i32 msg_length = 32000;
+		const uint32_t msg_length = 32000;
 		char* out_message = new char[msg_length];
 		memset(out_message, 0, sizeof(out_message));
 
@@ -33,9 +34,9 @@ namespace Logger
 		
 		// Platform specific output
 		if (is_error) {
-			Platform::write_console_error(out_message2, level);
+			Platform::console_write(out_message2, level);
 		} else {
-			Platform::write_console(out_message2, level);
+			Platform::console_write_err(out_message2, level);
 		}
 	}
 }

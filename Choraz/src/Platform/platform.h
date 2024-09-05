@@ -1,42 +1,29 @@
 #pragma once
 
-#include "Choraz/defines.h"
+#include <stdint.h>
 
-typedef struct platform_state
+typedef struct PlatformState
 {
 	void* internal_state;
-} platform_state;
+} PlatformState;
 
-namespace Platform
+class Platform
 {
-	b8 startup(
-		platform_state* state,
-		const char* application_name,
-		i32 x,
-		i32 y,
-		i32 width,
-		i32 height
-	);
+public:
+	// Starts up the platform and creates a window
+	Platform(PlatformState* plat_state, const char* app_name, int height, int width, int x, int y);
+	bool pump_messages();
 
-	b8 shutdown(platform_state* state);
+	static void console_write(const char* msg, uint8_t colour);
+	static void console_write_err(const char* msg, uint8_t colour);
 
-	b8 message_pump(platform_state* state);
+	static void memory_allocate(uint64_t size, bool aligned);
+	static void memory_set(void* dest, uint32_t value, uint64_t size);
+	static void memory_zero(void* block, uint64_t size);
+	static void memory_free(void* block, bool aligned);
+	static void memory_copy(void* dest, const void* src, uint64_t size);
 
-	void* memory_allocate(long int size, b8 aligned);
+	static void absolute_time();
 
-	void memory_free(void* block, b8 aligned);
-
-	void* memory_zero(void* block, u64 size);
-
-	void* memory_copy(void* dest, const void* src, u64 size);
-
-	void* memory_set(void* dest, i32 value, u64 size);
-
-	void write_console(const char* message, u8 colour);
-
-	void write_console_error(const char* message, u8 colour);
-
-	f64 get_absolute_time();
-
-	void sleep(u64 ms);
+	static void sleep();
 };
