@@ -13,7 +13,7 @@ namespace Logger
 		return TRUE;
 	}
 
-	void Log(log_level level, const char* message, ...)
+	void Log(LogLevel level, const char* message, ...)
 	{
 		const char* level_strings[6] = { "[FATAL]: ", "[ERROR]: ", "[WARNING]: ", "[INFO]: ", "[DEBUG]: ", "[TRACE]: " };
 		b8 is_error = level <= LevelError;

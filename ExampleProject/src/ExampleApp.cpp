@@ -5,7 +5,7 @@ class ExampleProject : public Choraz::Application
 public:
 	ExampleProject()
 	{
-
+		INFO("TEST INFO");
 	}
 
 	~ExampleProject()
